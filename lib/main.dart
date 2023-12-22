@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'presentation/home.dart';
 import 'presentation/authentication.dart';
 import 'presentation/crud/student/create.dart';
+import 'presentation/crud/professor/create.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,11 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/': (context) => HomePage(), // Route par défaut
+        '/': (context) => HomePage(),
         '/auth': (context) => AuthenticationPage(),
-        '/etudiant/create': (context) => CreateStudent(title: "Mama"),
+        '/etudiant/create': (context) => const CreateStudent(),
+        '/professor/create': (context) => const CreateProfessor(),
       },
-      // La propriété 'home' a été supprimée pour éviter la confusion
     );
   }
 }

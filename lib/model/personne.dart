@@ -1,4 +1,5 @@
 import 'package:ui_authentification/model/type_personne.dart';
+import 'sexe.dart';
 
 abstract class Personne {
   int _id;
@@ -6,14 +7,16 @@ abstract class Personne {
   String _prenom;
   String _matricule;
   TypePersonne _type;
+  Sexe _sexe;
   String? username;
   String? motPasse;
 
   // Constructeur
   Personne(this._id, this._nom, this._prenom, this._matricule, this._type,
+      this._sexe,
       {this.username, this.motPasse});
   Personne.compte(this._id, this._nom, this._prenom, this._matricule,
-      this._type, this.username, this.motPasse);
+      this._sexe, this._type, this.username, this.motPasse);
 
   int get id => _id;
   set id(int value) => _id = value;

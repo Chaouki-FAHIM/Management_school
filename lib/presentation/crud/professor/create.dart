@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
-class CreateStudent extends StatefulWidget {
-  const CreateStudent({super.key});
+class CreateProfessor extends StatefulWidget {
+  const CreateProfessor({super.key});
   @override
-  State<CreateStudent> createState() => _CreateStudentState();
+  State<CreateProfessor> createState() => _CreateProfessorState();
 }
 
-class _CreateStudentState extends State<CreateStudent> {
+class _CreateProfessorState extends State<CreateProfessor> {
   // Contrôleurs pour les champs de texte
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _matriculeController = TextEditingController();
+  final TextEditingController _matiereController = TextEditingController();
   final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
@@ -21,6 +22,7 @@ class _CreateStudentState extends State<CreateStudent> {
   Color firstNameColor = Colors.grey;
   Color lastNameColor = Colors.grey;
   Color matriculeColor = Colors.grey;
+  Color matiereColor = Colors.grey;
   Color userNameColor = Colors.grey;
   Color passwordColor = Colors.grey;
   Color confirmPasswordColor = Colors.grey;
@@ -31,6 +33,7 @@ class _CreateStudentState extends State<CreateStudent> {
     if (_firstNameController.text.isEmpty ||
         _lastNameController.text.isEmpty ||
         _matriculeController.text.isEmpty ||
+        _matiereController.text.isEmpty ||
         _userNameController.text.isEmpty ||
         _passwordController.text.isEmpty ||
         _confirmPasswordController.text.isEmpty) {
@@ -50,7 +53,7 @@ class _CreateStudentState extends State<CreateStudent> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text("Ajouter un nouveau étudiant"),
+        title: const Text("Ajouter un nouveau professeur"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -106,8 +109,22 @@ class _CreateStudentState extends State<CreateStudent> {
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 10),
               // ligne 3
+              Container(
+                padding: const EdgeInsets.all(1.0),
+                color: Colors.grey,
+                child: TextField(
+                  controller: _matiereController,
+                  decoration: const InputDecoration(
+                    hintText: 'Matière',
+                    fillColor: Colors.white,
+                    filled: true,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              // ligne 4
               const Text(
                 'Sexe',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -146,7 +163,7 @@ class _CreateStudentState extends State<CreateStudent> {
                 ],
               ),
               const SizedBox(height: 10),
-              // ligne 4
+              // ligne 5
               Row(
                 children: [
                   Expanded(
@@ -166,7 +183,7 @@ class _CreateStudentState extends State<CreateStudent> {
                 ],
               ),
               const SizedBox(height: 16),
-              // ligne 5
+              // ligne 6
               Container(
                 padding: const EdgeInsets.all(1.0),
                 color: Colors.grey,
@@ -181,7 +198,7 @@ class _CreateStudentState extends State<CreateStudent> {
                 ),
               ),
               const SizedBox(height: 16),
-              // ligne 6
+              // ligne 7
               Container(
                 padding: const EdgeInsets.all(1.0),
                 color: Colors.grey,
@@ -196,7 +213,7 @@ class _CreateStudentState extends State<CreateStudent> {
                 ),
               ),
               const SizedBox(height: 16),
-              // ligne 7
+              // ligne 8
               ElevatedButton(
                 onPressed: _handleSubmit,
                 child: const Center(child: Text('Enregistrer')),

@@ -1,2 +1,1 @@
-Création de la page d'accueil et de la page d'authentification au niveau du front-end dans la couche de présentation.
-Création de la couche DAO et model
+Ajouter les deux pages du création le professeur et l'étudiant partie front-end avec un simple contrôle de saisi

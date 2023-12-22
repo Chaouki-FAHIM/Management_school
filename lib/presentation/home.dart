@@ -27,27 +27,27 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.account_circle),
-                title: Text('Profil'),
+                leading: const Icon(Icons.account_circle),
+                title: const Text('Profil'),
                 onTap: () {},
               ),
               ListTile(
-                leading: Icon(Icons.school),
-                title: Text('Etudiants'),
+                leading: const Icon(Icons.school),
+                title: const Text('Etudiants'),
                 onTap: () {
                   Navigator.pushNamed(context, '/etudiant/create');
                 },
               ),
               ListTile(
-                leading: Icon(Icons.cast_for_education),
-                title: Text('Professeurs'),
+                leading: const Icon(Icons.cast_for_education),
+                title: const Text('Professeurs'),
                 onTap: () {
-                  // Naviguer vers la page Paramètres
+                  Navigator.pushNamed(context, '/professor/create');
                 },
               ),
               ListTile(
-                leading: Icon(Icons.exit_to_app),
-                title: Text('Déconnexion'),
+                leading: const Icon(Icons.exit_to_app),
+                title: const Text('Déconnexion'),
                 onTap: () {
                   // Gérer la déconnexion
                 },

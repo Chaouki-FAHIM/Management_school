@@ -2,14 +2,15 @@ import 'package:ui_authentification/model/type_personne.dart';
 
 import 'personne.dart';
 import 'devoir.dart';
+import 'sexe.dart';
 
 class Professeur extends Personne {
+  String _matiere;
   List<Devoir> _listeDevoirs;
-
   // Constructeur
-  Professeur(
-      int id, String nom, String prenom, String matricule, this._listeDevoirs)
-      : super(id, nom, prenom, matricule, TypePersonne.PROFESSEUR);
+  Professeur(int id, String nom, String prenom, String matricule, Sexe sexe,
+      this._matiere, this._listeDevoirs)
+      : super(id, nom, prenom, matricule, TypePersonne.PROFESSEUR, sexe);
 
   // Getter pour la liste des devoirs
   List<Devoir> get listeDevoirs => _listeDevoirs;
