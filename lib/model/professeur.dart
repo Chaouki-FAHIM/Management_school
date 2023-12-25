@@ -26,6 +26,7 @@ class Professeur extends Personne {
 
   // Getter pour la liste des devoirs
   List<Devoir> get listeDevoirs => _listeDevoirs;
+  String get matiere => _matiere;
 
   // Méthode pour ajouter un devoir à la liste
   void ajouterDevoir(Devoir devoir) {

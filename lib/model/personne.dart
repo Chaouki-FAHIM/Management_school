@@ -30,6 +30,9 @@ abstract class Personne {
   String get matricule => _matricule;
   set matricule(String value) => _matricule = value;
 
+  Sexe get sexe => _sexe;
+  set sexe(Sexe value) => _sexe = value;
+
   void afficherDetails() {
     print('ID: $_id');
     print('Nom: $_nom');

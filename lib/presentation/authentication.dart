@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../main.dart';
 
 class AuthenticationPage extends StatelessWidget {
-  // Contrôleurs pour les champs de texte
   final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -10,8 +9,8 @@ class AuthenticationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Ajout d'un nouveau étudiant"),
-        backgroundColor: Colors.black,
+        title: const Text("Authentification"),
+        backgroundColor: Colors.pink,
         centerTitle: true,
       ),
       body: Container(
@@ -19,7 +18,7 @@ class AuthenticationPage extends StatelessWidget {
         height: 350,
         margin: const EdgeInsets.all(25),
         padding: const EdgeInsets.all(10),
-        decoration: const BoxDecoration(color: Colors.blueGrey),
+        decoration: const BoxDecoration(color: Colors.amber),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

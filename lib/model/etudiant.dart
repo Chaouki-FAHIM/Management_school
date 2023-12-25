@@ -4,7 +4,7 @@ import 'personne.dart';
 import 'sexe.dart';
 
 class Etudiant extends Personne {
-  String _anneeScolaire;
+  int _anneeScolaire;
 
   // Constructeur
   Etudiant(int id, String nom, String prenom, String matricule, Sexe sexe,
@@ -17,8 +17,8 @@ class Etudiant extends Personne {
             username: username, motPasse: motPasse);
 
   // Getter et Setter pour l'année scolaire
-  String get anneeScolaire => _anneeScolaire;
-  set anneeScolaire(String value) => _anneeScolaire = value;
+  int get anneeScolaire => _anneeScolaire;
+  set anneeScolaire(int value) => _anneeScolaire = value;
 
   // Méthode pour afficher les détails de l'étudiant
   @override

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../model/session.dart';
+import '../main.dart';
+import '../widgets/card/professeur.dart';
+import '../widgets/card/etudiant.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -7,7 +10,7 @@ class HomePage extends StatelessWidget {
     // test d'exsitance de la session d'authentification
     if (!sessionManager.isAuthenticated) {
       Future.microtask(() => Navigator.pushReplacementNamed(context, '/auth'));
-      return Scaffold(body: Center(child: CircularProgressIndicator()));
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
     return Scaffold(
       appBar: AppBar(
@@ -61,8 +64,29 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: Center(
-        child: Text("Liste des devoirs"),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: Text(
+            'Liste des Professeurs',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+        ),ListView.builder(
+              itemCount: professeurs.length,
+              itemBuilder: (context, index) {
+                return ProfesseurTile(professeur: professeurs[index]);
+              },
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: students.length,
+              itemBuilder: (context, index) {
+                return EdutiantTile(etudiant: students[index]);
+              },
+            ),
+          )
+        ],
       ),
     );
   }
