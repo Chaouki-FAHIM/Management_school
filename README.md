@@ -1,1 +1,2 @@
-Ajout le contrôle d'auhthentification 
+Ajouter CRUD du etudiant
+Correction du suppression d'un professeur
